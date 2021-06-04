@@ -4,9 +4,9 @@ using System.Text;
 
 namespace MaxV.Base.DTOs
 {
-    public class BaseDTO
+    public class BaseDTO<TKey>
     {
-        public int Id { get; set; }
+        public TKey Id { get; set; }
         public Guid Uuid { get; set; }
         public DateTime? CreateAt { get; set; }
         public DateTime? UpdateAt { get; set; }
