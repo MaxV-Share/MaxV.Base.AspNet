@@ -4,9 +4,9 @@ using System.Text;
 
 namespace MaxV.Base.DTOs
 {
-    public class BaseDTO<TKey> where TKey : struct
+    public class BaseDTOUpdateRequest<TKey>
     {
-        public TKey? Id { get; set; }
+        public virtual TKey Id { get; set; }
         public Guid? Uuid { get; set; }
     }
 }

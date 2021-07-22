@@ -11,16 +11,23 @@ namespace MaxV.Base
     [Microsoft.EntityFrameworkCore.Index(nameof(Id))]
     public class BaseEntity<TKey>
     {
-        public static void SetDefaultValue<T>(ref T entity) where T: BaseEntity<TKey>
+        public BaseEntity()
         {
-            entity.Uuid = Guid.NewGuid();
-            entity.CreateAt = DateTime.UtcNow;
-            entity.UpdateAt = entity.CreateAt;
-
+        }
+        public virtual void SetDefaultValue(string createBy)
+        {
+            Uuid = Guid.NewGuid();
+            CreateAt = DateTime.Now;
+            UpdateAt = CreateAt;
+        }
+        public virtual void SetValueUpdate(string updateBy)
+        {
+            UpdateAt = DateTime.Now;
+            UpdateBy = updateBy;
         }
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
-        public TKey Id { get; set; }
+        public virtual TKey Id { get; set; }
         public Guid Uuid { get; set; }
         public DateTime? CreateAt { get; set; }
         public DateTime? UpdateAt { get; set; }
