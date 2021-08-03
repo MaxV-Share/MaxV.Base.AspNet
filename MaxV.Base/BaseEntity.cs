@@ -9,14 +9,10 @@ using System.Threading.Tasks;
 namespace MaxV.Base
 {
     [Microsoft.EntityFrameworkCore.Index(nameof(Id))]
-    public class BaseEntity<TKey>
+    public abstract class BaseEntity<TKey>
     {
-        public BaseEntity()
-        {
-        }
         public virtual void SetDefaultValue(string createBy)
         {
-            Uuid = Guid.NewGuid();
             CreateAt = DateTime.Now;
             UpdateAt = CreateAt;
         }
@@ -28,7 +24,6 @@ namespace MaxV.Base
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         public virtual TKey Id { get; set; }
-        public Guid Uuid { get; set; }
         public DateTime? CreateAt { get; set; }
         public DateTime? UpdateAt { get; set; }
         public string CreateBy { get; set; }

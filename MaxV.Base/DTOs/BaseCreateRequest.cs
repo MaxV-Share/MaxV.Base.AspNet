@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MaxV.Base.DTOs
 {
-    public class BaseDTOCreateRequest
+    public class BaseCreateRequest
     {
     }
 }
