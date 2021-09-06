@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,15 +11,17 @@ namespace MaxV.Base
     [Microsoft.EntityFrameworkCore.Index(nameof(Id))]
     public abstract class BaseEntity<TKey>
     {
-        public virtual void SetDefaultValue(string createBy)
+        public virtual BaseEntity<TKey> SetDefaultValue(string createBy)
         {
             CreateAt = DateTime.Now;
             UpdateAt = CreateAt;
+            return this;
         }
-        public virtual void SetValueUpdate(string updateBy)
+        public virtual BaseEntity<TKey> SetValueUpdate(string updateBy)
         {
             UpdateAt = DateTime.Now;
             UpdateBy = updateBy;
+            return this;
         }
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
