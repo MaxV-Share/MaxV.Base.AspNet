@@ -1,10 +1,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MaxV.Base
 {
@@ -23,7 +20,7 @@ namespace MaxV.Base
             UpdateBy = updateBy;
             return this;
         }
-        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         public virtual TKey Id { get; set; }
         public DateTime? CreateAt { get; set; }

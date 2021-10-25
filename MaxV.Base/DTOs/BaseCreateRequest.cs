@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MaxV.Base.DTOs
+﻿namespace MaxV.Base.DTOs
 {
     public class BaseCreateRequest
     {

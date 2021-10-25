@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MaxV.Helper.Entities
+﻿namespace MaxV.Helper.Entities
 {
     public class Response<T>
     {
