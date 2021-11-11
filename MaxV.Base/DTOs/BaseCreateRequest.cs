@@ -1,6 +1,6 @@
 ﻿namespace MaxV.Base.DTOs
 {
-    public class BaseCreateRequest
+    public abstract class BaseCreateRequest
     {
     }
 }

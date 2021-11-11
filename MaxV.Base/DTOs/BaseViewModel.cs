@@ -2,7 +2,7 @@
 
 namespace MaxV.Base.DTOs
 {
-    public class BaseViewModel<TKey>
+    public abstract class BaseViewModel<TKey>
     {
         public virtual TKey Id { get; set; }
         public DateTime? CreateAt { get; set; }
